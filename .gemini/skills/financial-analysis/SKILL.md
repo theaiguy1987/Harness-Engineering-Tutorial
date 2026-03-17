@@ -22,12 +22,12 @@ Analyze the content and produce a structured financial analysis. Save the output
 
 Produce the following sections in this order:
 
-1. **Headline snapshot** — The 3 most important things to know about Q4 and Full Year 2025
-2. **Revenue performance** — How did net sales move vs last year? Which regions grew or declined?
-3. **Profitability** — Operating margins and income, what drove the changes
-4. **Segment breakdown** — How did Trucks, Construction Equipment, Buses, Volvo Penta, and Financial Services each perform?
-5. **Risks and headwinds** — What pressures did management flag?
-6. **Outlook for 2026** — What does the report say about what comes next?
+- Headline snapshot - The 3 most important things to know about Q4 and Full Year 2025
+2. **Revenue performance** - How did net sales move vs last year? Which regions grew or declined?
+3. **Profitability** - Operating margins and income, what drove the changes
+4. **Segment breakdown** - How did Trucks, Construction Equipment, Buses, Volvo Penta, and Financial Services each perform?
+5. **Risks and headwinds** - What pressures did management flag?
+6. **Outlook for 2026** - What does the report say about what comes next?
 
 ---
 
@@ -35,7 +35,7 @@ Produce the following sections in this order:
 
 - Always compare 2025 figures to 2024 (year-on-year context is mandatory)
 - Use bullet points, not paragraphs
-- Flag any figure that declined more than 20% year-on-year with ⚠️
+- Flag any figure that declined more than 20% year-on-year with [WARNING]
 - Keep the entire analysis under 300 words
 - End each section with one "So what?" sentence in italics
 - All figures in SEK unless stated otherwise
@@ -64,16 +64,6 @@ When reading the parsed report, prioritize extracting these data points:
 
 ## About me
 
-[BLANK — add your details here to personalize the analysis]
+[BLANK - add your details here to personalize the analysis]
 
-<!--
-EXAMPLES:
-"I work in the Trucks division and care most about
- North American market performance and order intake trends."
-
-"I am new to finance. Please explain any technical terms
- you use and keep the language simple."
-
-"I care most about the electrification story —
- how are electric truck and bus orders trending?"
--->
+#
