@@ -8,6 +8,29 @@
 
 Welcome. You have just loaded the context for a hands-on Harness Engineering exercise.
 
+### Step 0 — Environment setup (do this first, every time)
+
+Before running any skill, ensure the Python virtual environment `demo-venv` is active.
+**Run this check immediately when you load this file:**
+
+```bash
+# If demo-venv does not exist — create it and install dependencies
+python -m venv demo-venv
+demo-venv\Scripts\activate        # Windows
+# source demo-venv/bin/activate   # macOS / Linux
+pip install -r requirements.txt
+
+# If demo-venv already exists — just activate it
+demo-venv\Scripts\activate        # Windows
+# source demo-venv/bin/activate   # macOS / Linux
+```
+
+> **Agent instruction:** On startup, check whether `demo-venv` exists in the project root.
+> If it does not exist, create it and install `requirements.txt`. If it exists, activate it.
+> Do not proceed with any skill until the environment is confirmed active.
+
+---
+
 Here is what is available to you in this project:
 
 - A real financial report: `volvo-group-q4-2025-eng.pdf`
