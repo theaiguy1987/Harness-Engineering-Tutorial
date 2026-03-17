@@ -38,7 +38,7 @@ The script will:
 - **Bullet points only** — no paragraphs on slides
 - **Max 6 bullets per slide** — if more, split or summarize
 - **Font**: Use clean sans-serif (Calibri)
-- **Highlight declines >20%** with red text where flagged with ⚠️
+- **Highlight declines >20%** — flag in red any figure marked with ⚠️ in the analysis
 - **Final slide**: "Key Takeaway" — one sentence summary
 
 ---

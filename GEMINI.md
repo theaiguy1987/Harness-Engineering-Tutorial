@@ -4,6 +4,32 @@
 
 ---
 
+## Getting started
+
+Welcome. You have just loaded the context for a hands-on Harness Engineering exercise.
+
+Here is what is available to you in this project:
+
+- A real financial report: `volvo-group-q4-2025-eng.pdf`
+- Three agent skills already installed in `.gemini/skills/`:
+  - `pdf-parser` — reads and extracts the PDF into structured markdown
+  - `financial-analysis` — analyzes the extracted content and produces a brief
+  - `executive-brief` — turns the analysis into a PowerPoint presentation
+
+**The natural next step is to run the full pipeline.** You can do this with a single prompt:
+
+> Parse the Volvo Q4 2025 PDF, then run the financial analysis, then create the executive brief presentation.
+
+Gemini will activate each skill in sequence and produce three output files:
+`parsed-report.md` → `financial-analysis.md` → `executive-brief.pptx`
+
+Once you have the output, open `financial-analysis.md` and read it.
+Ask yourself: does the analysis reflect *your* perspective and priorities?
+If not, open `.gemini/skills/financial-analysis/SKILL.md`, fill in the **About me** section, and re-run.
+That loop — run, review, refine, re-run — is the core of harness engineering.
+
+---
+
 ## What this project is
 
 This repository contains the Volvo Group Q4 and Full Year 2025 financial report (`volvo-group-q4-2025-eng.pdf`).
