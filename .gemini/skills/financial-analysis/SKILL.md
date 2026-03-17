@@ -62,19 +62,3 @@ When reading the parsed report, prioritize extracting these data points:
 
 ---
 
-## About me
-
-[BLANK — add your details here to personalize the analysis]
-
-<!--
-EXAMPLES of what you could write here:
-
-"I work in the Trucks division and care most about
- North American market performance and order intake trends."
-
-"I am new to finance. Please explain any technical terms
- you use and keep the language simple."
-
-"I care most about the electrification story —
- how are electric truck and bus orders trending?"
--->
