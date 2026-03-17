@@ -16,10 +16,12 @@ This is the core lesson of **Harness Engineering**: the agent's output is only a
 
 ## What's in this folder
 
-| File | What it is |
+| File / Folder | What it is |
 |---|---|
 | `GEMINI.md` | The agent's project map — already filled in for you. It tells Gemini what this project is, what the source document contains, and the rules for all outputs. **Do not edit this.** |
-| `SKILLS.md` | Your personal analytical skill — a template **you fill in**. This is where you tell Gemini *how* to analyze the report for you specifically. |
+| `.gemini/skills/pdf-parser/` | Skill that parses the PDF into structured markdown using a bundled Python script. |
+| `.gemini/skills/financial-analysis/` | Skill that reads the parsed markdown and produces a financial analysis — **this is the one you personalize**. |
+| `.gemini/skills/executive-brief/` | Skill that converts the analysis into a PowerPoint presentation using a bundled Python script. |
 | `volvo-group-q4-2025-eng.pdf` | The source document. Gemini will read this directly. |
 
 ---
@@ -50,13 +52,15 @@ Gemini will automatically read `GEMINI.md` when it starts. It now knows what thi
 
 ---
 
-## Step 2 — Fill in your SKILLS.md (4 min)
+## Step 2 — Personalize the financial-analysis skill (4 min)
 
-Open `SKILLS.md` in any text editor. Read through it and fill in each section.
+Open `.gemini/skills/financial-analysis/SKILL.md` in any text editor.
+
+Scroll to the **"About me"** section at the bottom and fill it in. This tells Gemini *your* perspective.
 
 There are no wrong answers. Write what is true for you:
 - What angle are you coming from?
-- What sections do you want in the brief?
+- What do you care most about?
 - What specific thing are you curious about?
 
 **The more specific you are, the better the output.**
@@ -76,16 +80,15 @@ Save the file when you're done.
 Back in your Gemini CLI session, type this prompt:
 
 ```
-Read the SKILLS.md file in this folder. Then read volvo-group-q4-2025-eng.pdf
-and produce the executive brief exactly as I have specified in my skill file.
-Save the output as executive-brief.md
+Parse the Volvo Q4 2025 PDF report, then run the financial analysis,
+and finally create the executive brief PowerPoint presentation.
 ```
 
 Watch what Gemini does. It will:
-1. Read your SKILLS.md
-2. Parse the PDF
-3. Generate the brief according to your instructions
-4. Save it to a file
+1. Activate the `pdf-parser` skill and run the Python script to extract text
+2. Activate the `financial-analysis` skill to produce the analysis markdown
+3. Activate the `executive-brief` skill to generate the PowerPoint deck
+4. Save `parsed-report.md`, `financial-analysis.md`, and `executive-brief.pptx`
 
 ---
 
@@ -97,7 +100,7 @@ Something will not be quite right. That's intentional. Now ask yourself:
 
 > *"What is missing or off? Is it a prompt problem — or a context problem?"*
 
-**If it's a context problem** (the agent didn't understand your intent): go back to `SKILLS.md`, add or refine one rule, and re-run.
+**If it's a context problem** (the agent didn't understand your intent): go back to `.gemini/skills/financial-analysis/SKILL.md`, add or refine one rule, and re-run.
 
 **If it's a prompt problem** (you didn't ask clearly enough): refine your prompt in Gemini and try again.
 
@@ -109,9 +112,9 @@ This loop — run, review, refine context, re-run — is the harness engineering
 
 When you're done, reflect on these questions:
 
-1. What did filling in `SKILLS.md` force you to think about that you wouldn't have otherwise?
+1. What did filling in the financial-analysis skill force you to think about that you wouldn't have otherwise?
 2. What one line in your skill file had the biggest impact on the output?
-3. If you had another 10 minutes, what would you add to `SKILLS.md`?
+3. If you had another 10 minutes, what would you add or change in the skills?
 
 ---
 
@@ -119,7 +122,7 @@ When you're done, reflect on these questions:
 
 If you finish early, try one of these:
 
-**Challenge A:** Add this line to your SKILLS.md:
+**Challenge A:** Add this line to the financial-analysis skill's "About me" section:
 > *"End every section with a one-sentence 'so what' that would resonate with a Volvo team member."*
 Then re-run and see how the tone changes.
 
@@ -127,8 +130,8 @@ Then re-run and see how the tone changes.
 > *"Which segment had the most surprising performance this quarter and why?"*
 See if the answer matches what's in your brief — or reveals something new.
 
-**Challenge C:** Ask Gemini to turn the brief into a 5-slide structure:
-> *"Based on executive-brief.md, suggest a 5-slide deck structure with a title and 3 bullet points per slide."*
+**Challenge C:** Open `executive-brief.pptx` and review the slides. Then ask:
+> *"The slides need more visual impact. Add a slide for electrification trends with the key EV delivery numbers."*
 
 ---
 
@@ -138,9 +141,10 @@ By completing this exercise, you experienced three of the core principles from t
 
 | Principle | Where you felt it |
 |---|---|
-| **Context is everything** | GEMINI.md gave Gemini its world. Without it, the output would have been generic. |
-| **Humans specify intent, agents execute** | You didn't touch the PDF. You described what you wanted and Gemini did the work. |
-| **Fix the context, not just the prompt** | When the output was off, the right move was to improve SKILLS.md — not just rephrase the ask. |
+| **Repository as system of record** | GEMINI.md gave Gemini its world. The skills gave it step-by-step expertise. Without them, the output would have been generic. |
+| **Agent legibility** | The PDF parser script made the report readable to the agent. The bundled scripts are tools the agent can see and run. |
+| **Humans specify intent, agents execute** | You didn't touch the PDF. You described what you wanted and Gemini orchestrated three skills to do the work. |
+| **Fix the context, not just the prompt** | When the output was off, the right move was to improve the skill file — not just rephrase the ask. |
 
 ---
 
